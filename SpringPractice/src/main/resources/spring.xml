@@ -4,5 +4,16 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="DevObj" class="com.springcore.practice.Dev"></bean>
+<!--CONSTRUCTOR INJECION OF LAPTOP INTO DEV-->
+<!--    <bean id="DevObj" class="Dev">-->
+<!--        <constructor-arg ref="LaptopObj"/>-->
+<!--    </bean>-->
+
+<!--SETTER INJECITON OF LAPTOP INTO DEV-->
+    <bean id="DevObj" class="Dev">
+        <property name="laptop" ref="LaptopObj"/>
+    </bean>
+
+
+    <bean id="LaptopObj" class="Laptop"></bean>
 </beans>
