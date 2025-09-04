@@ -4,16 +4,21 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+<!--    <bean id="DevObj" class="Dev"/>-->
+
 <!--CONSTRUCTOR INJECION OF LAPTOP INTO DEV-->
 <!--    <bean id="DevObj" class="Dev">-->
 <!--        <constructor-arg ref="LaptopObj"/>-->
 <!--    </bean>-->
 
 <!--SETTER INJECITON OF LAPTOP INTO DEV-->
-    <bean id="DevObj" class="Dev">
-        <property name="laptop" ref="LaptopObj"/>
-    </bean>
+<!--    <bean id="DevObj" class="Dev">-->
+<!--        <property name="laptop" ref="LaptopObj"/>-->
+<!--    </bean>-->
 
+<!--AUTOWIRING-->
+    <bean id="DevObj" class="Dev" autowire="byType"></bean>
+    <bean id="lap" class="Laptop" primary="true"></bean>
+    <bean id="com" class="Desktop"></bean>
 
-    <bean id="LaptopObj" class="Laptop"></bean>
 </beans>
